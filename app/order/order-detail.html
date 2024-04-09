@@ -41,6 +41,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/app/size/sizes.html">Sizes</a>
+            <li class="nav-item">
+              <a class="nav-link" href="/app/beverage/beverages.html">Beverages</a>
+            </li>
           </li>
         </ul>
       </nav>
@@ -89,8 +92,9 @@
       <table class="table bg-white table-bordered">
         <thead class="thead-dark">
           <tr>
-            <th class="w-50">Size</th>
-            <th class="w-50">Ingredients</th>
+            <th class="w-33">Size</th>
+            <th class="w-33">Ingredients</th>
+            <th class="w-33">Beverages</th>
           </tr>
         </thead>
         <tbody>
@@ -98,14 +102,19 @@
             <td>
               <p id="size">{{size.name}} - ${{size.price}}</p>
             </td>
-            <td id="ingredients">
+            <td id="ingredients">         
+            {{#detail}}
+            {{#ingredient}}<p>{{ingredient.name}} - ${{ingredient_price}}</p>{{/ingredient}}
+            {{/detail}}
+            </td>
+            <td id="beverages">
               {{#detail}}
-              <p>{{ingredient.name}} - ${{ingredient_price}}</p>
+              {{#beverage}}  <p>{{beverage.name}} - ${{beverage_price}}</p>{{/beverage}}
               {{/detail}}
             </td>
           </tr>
           <tr class="table-active">
-            <th id="total" class="text-right" colspan="2">Total: ${{total_price}}</th>
+            <th id="total" class="text-right" colspan="3">Total: ${{total_price}}</th>
           </tr>
         </tbody>
       </table>
