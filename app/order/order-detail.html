@@ -104,12 +104,12 @@
             </td>
             <td id="ingredients">         
             {{#detail}}
-            {{#ingredient}}<p>{{ingredient.name}} - ${{ingredient_price}}</p>{{/ingredient}}
+            {{#ingredient}}<p>{{ingredient.name}} - ${{ingredient.price}}</p>{{/ingredient}}
             {{/detail}}
             </td>
             <td id="beverages">
               {{#detail}}
-              {{#beverage}}  <p>{{beverage.name}} - ${{beverage_price}}</p>{{/beverage}}
+              {{#beverage}}  <p>{{beverage.name}} - ${{beverage.price}}</p>{{/beverage}}
               {{/detail}}
             </td>
           </tr>
