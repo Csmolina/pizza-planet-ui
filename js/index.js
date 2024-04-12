@@ -4,7 +4,6 @@
  */
 
 function postOrder(order) {
-  console.log(order);
   fetch("http://127.0.0.1:5000/order/", {
     method: "POST",
     body: JSON.stringify(order),
