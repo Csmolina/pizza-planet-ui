@@ -1,21 +1,17 @@
 function postBeverage(ingredient) {
-
-  fetch('http://127.0.0.1:5000/beverage/', {
-      method: 'POST',
-      body: JSON.stringify(ingredient),
-      headers: {
-          "Content-Type": "application/json; charset=utf-8",
-      },
+  fetch("http://127.0.0.1:5000/beverage/", {
+    method: "POST",
+    body: JSON.stringify(ingredient),
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+    },
   })
-      .then(res => res.json())
-      .then(res => showNotification());
-
-
+    .then((res) => res.json())
+    .then((res) => showNotification());
 }
 
 let beverageForm = $("#beverage-form");
-beverageForm.submit(event => {
-
+beverageForm.submit((event) => {
   let beverage = getBeverageData();
   postBeverage(beverage);
 
@@ -24,10 +20,9 @@ beverageForm.submit(event => {
 });
 
 function getBeverageData() {
-
   return {
-      name: $("input[name='name']").val(),
-      price: $("input[name='price']").val(),
+    name: $("input[name='name']").val(),
+    price: $("input[name='price']").val(),
   };
 }
 

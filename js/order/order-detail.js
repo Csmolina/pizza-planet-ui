@@ -1,7 +1,3 @@
-/**
- * Set the id to query the order
- */
-
 let urlParams = new URLSearchParams(window.location.search);
 let _id = urlParams.get("_id");
 

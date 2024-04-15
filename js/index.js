@@ -15,9 +15,6 @@ function postOrder(order) {
     .then((res) => showNotification());
 }
 
-/**
- * Get the form and submit it with fetch API
- */
 let orderForm = $("#order-form");
 orderForm.submit((event) => {
   let order = getOrderData();
@@ -27,9 +24,6 @@ orderForm.submit((event) => {
   event.currentTarget.reset();
 });
 
-/**
- * Gets the order data with JQuery
- */
 function getOrderData() {
   let ingredients = [];
   let beverages = [];
@@ -40,7 +34,6 @@ function getOrderData() {
     beverages.push($(this).val());
   });
 
-
   return {
     client_name: $("input[name='name']").val(),
     client_dni: $("input[name='dni']").val(),
@@ -48,20 +41,15 @@ function getOrderData() {
     client_phone: $("input[name='phone']").val(),
     size_id: $("input[name='size']:checked").val(),
     ingredients,
-    beverages
+    beverages,
   };
 }
 
-/**
- * Shows a notification when the order is accepted
- */
 function showNotification() {
   let orderAlert = $("#order-alert");
   orderAlert.toggle();
   setTimeout(() => orderAlert.toggle(), 5000);
 }
-
-// Gather information in a dynamic way
 
 function fetchIngredients() {
   fetch("http://127.0.0.1:5000/ingredient/")
