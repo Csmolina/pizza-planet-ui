@@ -1,7 +1,6 @@
-fetch('http://127.0.0.1:5000/report/')
+fetch("http://127.0.0.1:5000/report/")
   .then((response) => response.json())
   .then((report) => {
-    console.log(report)
     let template = createRowTemplate(report);
     $("#report").append(template);
   });
